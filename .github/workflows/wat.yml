@@ -1,0 +1,17 @@
+on:
+  workflow_dispatch:
+    inputs:
+      lite:
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  wat:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        set -x
+        echo "$WAT"
+      env:
+        WAT: ${{ inputs.lite }}
